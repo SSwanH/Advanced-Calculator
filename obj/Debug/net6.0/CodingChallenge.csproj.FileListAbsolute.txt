@@ -1,0 +1,15 @@
+/Users/shawnswan/Projects/SimpleCalculator/CodingChallenge/bin/Debug/net6.0/CodingChallenge
+/Users/shawnswan/Projects/SimpleCalculator/CodingChallenge/bin/Debug/net6.0/CodingChallenge.deps.json
+/Users/shawnswan/Projects/SimpleCalculator/CodingChallenge/bin/Debug/net6.0/CodingChallenge.runtimeconfig.json
+/Users/shawnswan/Projects/SimpleCalculator/CodingChallenge/bin/Debug/net6.0/CodingChallenge.dll
+/Users/shawnswan/Projects/SimpleCalculator/CodingChallenge/bin/Debug/net6.0/CodingChallenge.pdb
+/Users/shawnswan/Projects/SimpleCalculator/CodingChallenge/obj/Debug/net6.0/CodingChallenge.csproj.AssemblyReference.cache
+/Users/shawnswan/Projects/SimpleCalculator/CodingChallenge/obj/Debug/net6.0/CodingChallenge.GeneratedMSBuildEditorConfig.editorconfig
+/Users/shawnswan/Projects/SimpleCalculator/CodingChallenge/obj/Debug/net6.0/CodingChallenge.AssemblyInfoInputs.cache
+/Users/shawnswan/Projects/SimpleCalculator/CodingChallenge/obj/Debug/net6.0/CodingChallenge.AssemblyInfo.cs
+/Users/shawnswan/Projects/SimpleCalculator/CodingChallenge/obj/Debug/net6.0/CodingChallenge.csproj.CoreCompileInputs.cache
+/Users/shawnswan/Projects/SimpleCalculator/CodingChallenge/obj/Debug/net6.0/CodingChallenge.dll
+/Users/shawnswan/Projects/SimpleCalculator/CodingChallenge/obj/Debug/net6.0/refint/CodingChallenge.dll
+/Users/shawnswan/Projects/SimpleCalculator/CodingChallenge/obj/Debug/net6.0/CodingChallenge.pdb
+/Users/shawnswan/Projects/SimpleCalculator/CodingChallenge/obj/Debug/net6.0/CodingChallenge.genruntimeconfig.cache
+/Users/shawnswan/Projects/SimpleCalculator/CodingChallenge/obj/Debug/net6.0/ref/CodingChallenge.dll
