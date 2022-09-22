@@ -4,8 +4,6 @@ using CodingChallenge;
 using static System.Collections.Specialized.BitVector32;
 
 namespace CodingChallenge;
-
-
 internal class Program
 {
     private static void Main(string[] args)
@@ -15,6 +13,8 @@ internal class Program
         do
         {
             //Intro
+            Console.Clear();
+            Console.WriteLine("--------------------------------------------------------------");
             Console.WriteLine(
                 "Hello! This is a simple calculator that will allow you to add (+), subtract (-), multiply (*), and divide (/) two numbers, or you can choose to calculate a tip!");
             Console.WriteLine();
@@ -38,6 +38,7 @@ internal class Program
             }
 
             //Continue?
+                Console.WriteLine();
                 Console.WriteLine("To continue, press Y, to exit press any other key");
                 keepGoing = Console.ReadLine().ToLower();
         } while (keepGoing == "y");
