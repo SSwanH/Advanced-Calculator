@@ -6,12 +6,34 @@ namespace CodingChallenge;
 
 public class Tipping
 {
+    public static double GetBillNumber()
+    {
+        string? billNumberInput;
+        bool billNumberIsDouble;
+        double billAmount;
+        Console.Write("Please enter your bill amount");
+        billNumberInput = Console.ReadLine();
+        billNumberIsDouble = Double.TryParse(billNumberInput, out billAmount);
+
+        while (!billNumberIsDouble && billAmount < 0)
+        {
+            Console.WriteLine("Invalid entry. Please enter a number");
+            billNumberInput = Console.ReadLine();
+            billNumberIsDouble = Double.TryParse(billNumberInput, out billAmount);
+        }
+        Math.Round(billAmount, 2);
+        return billAmount;
+    }
+
+
     private static string tipAgain;
     
     
-    public static void TipCalculation(double firstNumber)
+    public static void TipCalculation(double billAmount)
 
     {
+        Console.Write("Please enter your bill amount");
+        
         Console.WriteLine("Please select a tip percentage you'd like to calculate.");
         Console.WriteLine("Would you like to tip 18%, 20%, or 25%?");
         string? tipPercentage = Console.ReadLine();
@@ -21,18 +43,18 @@ public class Tipping
             switch (tipPercentage)
             {
                 case "18%":
-                    var smallTip = firstNumber * .18;
-                    Console.WriteLine($"An 18% tip on your {firstNumber} total would come out to {smallTip}");
+                    var smallTip = billAmount * .18;
+                    Console.WriteLine($"An 18% tip on your {billAmount} total would come out to {Math.Round(smallTip, 2)}");
                     cont = true;
                     break;
                 case "20%":
-                    var medTip = firstNumber * .2;
-                    Console.WriteLine($"A 20% tip on your {firstNumber} total would come out to {medTip}");
+                    var medTip = billAmount * .2;
+                    Console.WriteLine($"A 20% tip on your {billAmount} total would come out to {Math.Round(medTip, 2)}");
                     cont = true;
                     break;
                 case "25%":
-                    var bigTip = firstNumber * .25;
-                    Console.WriteLine($"An 25% tip on your {firstNumber} total would come out to {bigTip}");
+                    var bigTip = billAmount * .25;
+                    Console.WriteLine($"An 25% tip on your {billAmount} total would come out to {Math.Round(bigTip, 2)}");
                     cont = true;
                     break;
                 default:
@@ -42,13 +64,6 @@ public class Tipping
                     break;
             }
         } while (cont == false);
-        // } while (tipPercentage == "18%" ||
-        //          tipPercentage == "20%" ||
-        //          tipPercentage == "25%");
-
-        // Console.WriteLine("Would you like to Continue(Y), or Exit to Menu(M)?");
-        // Console.WriteLine("You may press any other key to exit the program.");
-        // tipAgain = Console.ReadLine().ToLower();
     }
 
     
