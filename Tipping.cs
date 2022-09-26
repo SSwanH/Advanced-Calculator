@@ -11,32 +11,28 @@ public class Tipping
         string? billNumberInput;
         bool billNumberIsDouble;
         double billAmount;
-        Console.Write("Please enter your bill amount");
+        Console.WriteLine("Please enter your bill amount:");
+        Console.Write("$");
         billNumberInput = Console.ReadLine();
         billNumberIsDouble = Double.TryParse(billNumberInput, out billAmount);
 
-        while (!billNumberIsDouble && billAmount < 0)
+        while (!billNumberIsDouble || billAmount < 0)
         {
-            Console.WriteLine("Invalid entry. Please enter a number");
+            Console.WriteLine("Invalid entry. Please enter your bill amount:");
+            Console.Write("$");
             billNumberInput = Console.ReadLine();
             billNumberIsDouble = Double.TryParse(billNumberInput, out billAmount);
         }
-        Math.Round(billAmount, 2);
-        return billAmount;
+        return Math.Round(billAmount, 2);
     }
 
-
-    private static string tipAgain;
-    
-    
     public static void TipCalculation(double billAmount)
-
     {
-        Console.Write("Please enter your bill amount");
-        
+        Console.WriteLine();
         Console.WriteLine("Please select a tip percentage you'd like to calculate.");
         Console.WriteLine("Would you like to tip 18%, 20%, or 25%?");
         string? tipPercentage = Console.ReadLine();
+        Console.WriteLine();
         bool cont = true;
         do
         {
@@ -44,17 +40,17 @@ public class Tipping
             {
                 case "18%":
                     var smallTip = billAmount * .18;
-                    Console.WriteLine($"An 18% tip on your {billAmount} total would come out to {Math.Round(smallTip, 2)}");
+                    Console.WriteLine($"An 18% tip on your ${billAmount} total would come out to ${Math.Round(smallTip, 2)}");
                     cont = true;
                     break;
                 case "20%":
                     var medTip = billAmount * .2;
-                    Console.WriteLine($"A 20% tip on your {billAmount} total would come out to {Math.Round(medTip, 2)}");
+                    Console.WriteLine($"A 20% tip on your ${billAmount} total would come out to ${Math.Round(medTip, 2)}");
                     cont = true;
                     break;
                 case "25%":
                     var bigTip = billAmount * .25;
-                    Console.WriteLine($"An 25% tip on your {billAmount} total would come out to {Math.Round(bigTip, 2)}");
+                    Console.WriteLine($"An 25% tip on your ${billAmount} total would come out to ${Math.Round(bigTip, 2)}");
                     cont = true;
                     break;
                 default:

@@ -4,8 +4,6 @@ using CodingChallenge;
 using static System.Collections.Specialized.BitVector32;
 
 namespace CodingChallenge;
-
-
 internal class Program
 {
     private static void Main(string[] args)
@@ -15,8 +13,11 @@ internal class Program
         do
         {
             //Intro
+            Console.Clear();
+            Console.WriteLine("--------------------------------------------------------------");
             Console.WriteLine(
                 "Hello! This is a simple calculator that will allow you to add (+), subtract (-), multiply (*), and divide (/) two numbers, or you can choose to calculate a tip!");
+            Console.WriteLine();
             Console.WriteLine("Please choose 1 for tipping calculator, or choose 2 for Simple Calculator");
             tipOrCalc = (Console.ReadLine());
             while (tipOrCalc != "1" &&
@@ -33,81 +34,11 @@ internal class Program
             }
             else if (tipOrCalc == "2")
             {
-                Console.WriteLine("Please enter your first number");
-
-                Console.WriteLine();
-
-                //Get First Number
-                var firstNumber = GetFirstNumber();
-                Console.WriteLine();
-
-                //Choose Operator
-                Console.WriteLine("Enter the action to be performed");
-                Console.WriteLine("Press + add");
-                Console.WriteLine("Press - to Subtract");
-                Console.WriteLine("Press * to Multiply");
-                Console.WriteLine("Press / to Divide");
-
-                string? desiredAction = (Console.ReadLine());
-                while (desiredAction != "+" &&
-                       desiredAction != "-" &&
-                       desiredAction != "*" &&
-                       desiredAction != "/")
-                {
-                    Console.WriteLine("Incorrect action selected - action must be: +, -, *, /");
-                    desiredAction = Console.ReadLine();
-                }
-                // if (desiredAction == "$")
-                // {
-                //     Tipping.TipCalculation(firstNumber);
-                // }
-                Console.WriteLine();
-                Console.WriteLine();
-
-                    //Get Second Number
-                    string? secondNumberInput;
-                    bool secondNumberIsDouble;
-                    var secondNumber = GetSecondNumber();
-
-                    //If divide by zero
-                    while (desiredAction == "/" && secondNumber == 0)
-                    {
-                        Console.WriteLine(
-                            "Invalid entry - cannot divide by 0. Please enter a different second number:");
-                        secondNumberInput = Console.ReadLine();
-                        secondNumberIsDouble = Double.TryParse(secondNumberInput, out secondNumber);
-                    }
-
-                    //Operations
-                    switch (desiredAction)
-                    {
-                        case "+":
-                            var addition = firstNumber + secondNumber;
-                            Console.WriteLine($"Solution {firstNumber} + {secondNumber} = {addition}");
-                            break;
-
-                        case "-":
-                            var subtraction = firstNumber - secondNumber;
-                            Console.WriteLine($"Solution {firstNumber} - {secondNumber} = {subtraction}");
-                            break;
-
-                        case "*":
-                            var multiplication = firstNumber * secondNumber;
-                            Console.WriteLine($"Solution {firstNumber} * {secondNumber} = {multiplication}");
-                            break;
-
-                        case "/":
-                            var division = firstNumber / secondNumber;
-                            Division(firstNumber, secondNumber);
-                            break;
-
-                        default:
-                            Console.WriteLine("Incorrect action selected - action must be: +, -, *, /");
-                            break;
-                    }
+                SimpleCalculations();
             }
 
             //Continue?
+                Console.WriteLine();
                 Console.WriteLine("To continue, press Y, to exit press any other key");
                 keepGoing = Console.ReadLine().ToLower();
         } while (keepGoing == "y");
@@ -116,6 +47,83 @@ internal class Program
                 Console.WriteLine("kthxbye.");
 
             }
+
+    private static void SimpleCalculations()
+    {
+        Console.WriteLine("Please enter your first number");
+
+        Console.WriteLine();
+
+        //Get First Number
+        var firstNumber = GetFirstNumber();
+        Console.WriteLine();
+
+        //Choose Operator
+        Console.WriteLine("Enter the action to be performed");
+        Console.WriteLine("Press + add");
+        Console.WriteLine("Press - to Subtract");
+        Console.WriteLine("Press * to Multiply");
+        Console.WriteLine("Press / to Divide");
+
+        string? desiredAction = (Console.ReadLine());
+        while (desiredAction != "+" &&
+               desiredAction != "-" &&
+               desiredAction != "*" &&
+               desiredAction != "/")
+        {
+            Console.WriteLine("Incorrect action selected - action must be: +, -, *, /");
+            desiredAction = Console.ReadLine();
+        }
+
+        // if (desiredAction == "$")
+        // {
+        //     Tipping.TipCalculation(firstNumber);
+        // }
+        Console.WriteLine();
+        Console.WriteLine();
+
+        //Get Second Number
+        string? secondNumberInput;
+        bool secondNumberIsDouble;
+        var secondNumber = GetSecondNumber();
+
+        //If divide by zero
+        while (desiredAction == "/" && secondNumber == 0)
+        {
+            Console.WriteLine(
+                "Invalid entry - cannot divide by 0. Please enter a different second number:");
+            secondNumberInput = Console.ReadLine();
+            secondNumberIsDouble = Double.TryParse(secondNumberInput, out secondNumber);
+        }
+
+        //Operations
+        switch (desiredAction)
+        {
+            case "+":
+                var addition = firstNumber + secondNumber;
+                Console.WriteLine($"Solution {firstNumber} + {secondNumber} = {addition}");
+                break;
+
+            case "-":
+                var subtraction = firstNumber - secondNumber;
+                Console.WriteLine($"Solution {firstNumber} - {secondNumber} = {subtraction}");
+                break;
+
+            case "*":
+                var multiplication = firstNumber * secondNumber;
+                Console.WriteLine($"Solution {firstNumber} * {secondNumber} = {multiplication}");
+                break;
+
+            case "/":
+                var division = firstNumber / secondNumber;
+                Division(firstNumber, secondNumber);
+                break;
+
+            default:
+                Console.WriteLine("Incorrect action selected - action must be: +, -, *, /");
+                break;
+        }
+    }
 
     private static double GetSecondNumber()
     {
